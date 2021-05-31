@@ -42,37 +42,37 @@ for file in file_list:
         xpos = int(re.search("^(-?\d{1,4})", position).group())
         zpos = int(re.search("(-?\d{1,4}$)", position).group())
         # print(str(name) + " at " + str(xpos.group()) + ", " + str(zpos.group()))
-        if name[:10] == "skyscraper":
-            if name[-2:] == "01":
+        if re.match("skyscraper.*", name):
+            if re.match(".*01", name):
                 dishong += 1
-            elif name[-2:] == "02":
+            elif re.match(".*02", name): 
                 crackatower += 1
-            elif name[-2:] == "03":
+            elif re.match(".*03", name):
                 higashi += 1
-        if name[:7] == "factory":
-            if name[-2:] == "01":
+        elif re.match("factory.*", name):
+            if re.match(".*01", name):
                 shotgunmessfact += 1
-            elif name[-2:] == "02":
+            elif re.match(".*02", name):
                 shamwayfact += 1
-        if name[:5] == "store":
-            if name == "store_electronics_02":
+        elif re.match("store.*", name):
+            if re.match(".*electronics_02", name):
                 jbhifi += 1
-            elif name == "store_grocery_02":
+            elif re.match(".*grocery_02", name):
                 woolworths += 1
-            elif name == "store_hardware_02":
+            elif re.match(".*hardware_02", name):
                 bunnings += 1
-        if name == "diner_03":
+        elif re.match("diner_03", name):
             kfc += 1
-        if name == "carlot_01":
+        elif re.match("carlot_01", name):
             tiffs += 1
-        if name[:6] == "trader":
+        elif re.match("trader.*", name):
             if xpos >= 0 and zpos < 0:
                 tradernw += 1
-            if xpos >= 0 and zpos >= 0:
+            elif xpos >= 0 and zpos >= 0:
                 traderne += 1
-            if xpos < 0 and zpos < 0:
+            elif xpos < 0 and zpos < 0:
                 tradersw += 1
-            if xpos < 0 and zpos >= 0:
+            elif xpos < 0 and zpos >= 0:
                 traderse += 1 
 
     
