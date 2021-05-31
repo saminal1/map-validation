@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 # read in files - recurse through world directories in a root path
 glob_path = Path(r"J:\Games\7D2D\NitroGen_WorldGenerator\output")
 file_list = [str(pp) for pp in glob_path.glob("**/prefabs.xml")]
+passes = []
 
 for file in file_list:
 
@@ -133,7 +134,15 @@ for file in file_list:
         score += 1
     if score == 11:
         print(str(world) + " score out of 11: " + str(score) + " - Pass")
+        passes.append(world)
     else:
         print(str(world) + " score out of 11: " + str(score) + " - Fail")
     print("\n")
-    
+
+# Summary
+if len(passes) == 0:
+    print("No passes in batch.")
+else:
+    print("List of passes:")
+    for apass in passes:
+        print(apass)
