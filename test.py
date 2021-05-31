@@ -62,11 +62,8 @@ for file in file_list:
     # count key pois
     for decoration in root.iter('decoration'):
         name = decoration.get('name')
-        for req in reqlist:
-            if re.match(req.filename, name):
-                keypoi.found(req)
-                break
-            elif re.match("trader.*", name):
+        if re.match("trader.*", name):
+            for req in reqlist[-4:]:
                 position = decoration.get('position')
                 xpos = int(re.search("^(-?\d{1,4})", position).group())
                 zpos = int(re.search("(-?\d{1,4}$)", position).group())
@@ -80,6 +77,11 @@ for file in file_list:
                     keypoi.found(req)
                     break
                 elif xpos >= 0 and zpos < 0 and re.match("traderse", req.filename):
+                    keypoi.found(req)
+                    break
+        else:
+            for req in reqlist[:-4]:
+                if re.match(req.filename, name):
                     keypoi.found(req)
                     break
 
