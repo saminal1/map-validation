@@ -63,22 +63,19 @@ for file in file_list:
     for decoration in root.iter('decoration'):
         name = decoration.get('name')
         if re.match("trader.*", name):
-            for req in reqlist[-4:]:
-                position = decoration.get('position')
-                xpos = int(re.search("^(-?\d{1,4})", position).group())
-                zpos = int(re.search("(-?\d{1,4}$)", position).group())
-                if xpos < 0 and zpos >= 0 and re.match("tradernw", req.filename):
-                    keypoi.found(req)
-                    break
-                elif xpos >= 0 and zpos >= 0 and re.match("traderne", req.filename):
-                    keypoi.found(req)
-                    break
-                elif xpos < 0 and zpos < 0 and re.match("tradersw", req.filename):
-                    keypoi.found(req)
-                    break
-                elif xpos >= 0 and zpos < 0 and re.match("traderse", req.filename):
-                    keypoi.found(req)
-                    break
+            position = decoration.get('position')
+            xpos = int(re.search("^(-?\d{1,4})", position).group())
+            zpos = int(re.search("(-?\d{1,4}$)", position).group())
+            if zpos >= 0:
+                if xpos < 0:
+                    keypoi.found(reqlist[-4]) # Found in NW quadrant
+                else:
+                    keypoi.found(reqlist[-3]) # Found in NE quadrant
+            else:
+                if xpos < 0:
+                    keypoi.found(reqlist[-2]) # Found in SW quadrant
+                else:
+                    keypoi.found(reqlist[-1]) # Found in SE quadrant
         else:
             for req in reqlist[:-4]:
                 if re.match(req.filename, name):
