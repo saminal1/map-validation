@@ -4,7 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 
 # read in files - recurse through world directories in a root path
-glob_path = Path(r"J:\Games\7D2D\KingGen")
+glob_path = Path(r"J:\Games\7D2D\NitroGen_WorldGenerator\output")
 file_list = [str(pp) for pp in glob_path.glob("**/prefabs.xml")]
 
 for file in file_list:
@@ -12,6 +12,7 @@ for file in file_list:
     # get world name from path name
     world = re.search("([A-Za-z0-9\-]*)(?=.prefabs\.xml$)", file).group()
     print(world)
+    print("")
 
     #read in xml
     prefabs = ET.parse(file)
@@ -134,3 +135,5 @@ for file in file_list:
         print(str(world) + " score out of 11: " + str(score) + " - Pass")
     else:
         print(str(world) + " score out of 11: " + str(score) + " - Fail")
+    print("\n")
+    
