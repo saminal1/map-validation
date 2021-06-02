@@ -7,103 +7,98 @@ It is aimed at validation of a batch of generated worlds to speed up the process
 
 ## Example Output:
 
+### Console
 ```
-OutbackDecayJune1
+OutbackJune1
 
-Dishong Tower: 5
-CrackaBook Tower: 5
-Higashi Building: 6
-Shotgun Messiah Factory: 9
-Shamway Factory: 7
-JB Hifi: 3
-Woolworths: 3
-Bunnings: 5
-KFC: 5
-Tiffs Car Lot: 20
-Traders:
-NW: 2
-NE: 1
-SW: 6
-SE: 3
-OutbackDecayJune1 score out of 11: 10 - Fail
+Dishong Tower: 2 of 3 found - Fail
+Cracka Books Tower: 4 of 3 found - Pass
+Higashi Building: 1 of 2 found - Fail
+Building Site: 6 of 2 found - Pass
+Shotgun Messiah Factory: 5 of 4 found - Pass
+Shamway Factory: 9 of 4 found - Pass
+Waterworks: 12 of 2 found - Pass
+JB Hifi: 5 of 3 found - Pass
+Woolworths: 6 of 3 found - Pass
+Bunnings: 7 of 3 found - Pass
+KFC: 12 of 3 found - Pass
+Tiff's Cars: 11 of 3 found - Pass
+NW Traders: 4 of 2 found - Pass
+NE Traders: 2 of 2 found - Pass
+SW Traders: 1 of 2 found - Fail
+SE Traders: 4 of 2 found - Pass
 
-
-OutbackDecayJune2
-
-Dishong Tower: 5
-CrackaBook Tower: 7
-Higashi Building: 5
-Shotgun Messiah Factory: 6
-Shamway Factory: 7
-JB Hifi: 3
-Woolworths: 5
-Bunnings: 7
-KFC: 2
-Tiffs Car Lot: 18
-Traders:
-NW: 3
-NE: 1
-SW: 4
-SE: 4
-OutbackDecayJune2 score out of 11: 9 - Fail
+OutbackJune1 score out of 16: 13 - Fail
 
 
-OutbackDecayJune3
+OutbackJune2
 
-Dishong Tower: 6
-CrackaBook Tower: 6
-Higashi Building: 7
-Shotgun Messiah Factory: 10
-Shamway Factory: 9
-JB Hifi: 5
-Woolworths: 4
-Bunnings: 8
-KFC: 5
-Tiffs Car Lot: 18
-Traders:
-NW: 3
-NE: 2
-SW: 5
-SE: 2
-OutbackDecayJune3 score out of 11: 11 - Pass
+Dishong Tower: 0 of 3 found - Fail
+Cracka Books Tower: 4 of 3 found - Pass
+Higashi Building: 1 of 2 found - Fail
+Building Site: 3 of 2 found - Pass
+Shotgun Messiah Factory: 4 of 4 found - Pass
+Shamway Factory: 6 of 4 found - Pass
+Waterworks: 19 of 2 found - Pass
+JB Hifi: 6 of 3 found - Pass
+Woolworths: 2 of 3 found - Fail
+Bunnings: 4 of 3 found - Pass
+KFC: 13 of 3 found - Pass
+Tiff's Cars: 7 of 3 found - Pass
+NW Traders: 5 of 2 found - Pass
+NE Traders: 2 of 2 found - Pass
+SW Traders: 0 of 2 found - Fail
+SE Traders: 4 of 2 found - Pass
 
-
-OutbackDecayJune4
-
-Dishong Tower: 6
-CrackaBook Tower: 5
-Higashi Building: 6
-Shotgun Messiah Factory: 9
-Shamway Factory: 9
-JB Hifi: 5
-Woolworths: 7
-Bunnings: 5
-KFC: 4
-Tiffs Car Lot: 18
-Traders:
-NW: 1
-NE: 4
-SW: 2
-SE: 5
-OutbackDecayJune4 score out of 11: 10 - Fail
+OutbackJune2 score out of 16: 12 - Fail
 
 
-OutbackDecayJune5
+OutbackJune3
 
-Dishong Tower: 5
-CrackaBook Tower: 5
-Higashi Building: 8
-Shotgun Messiah Factory: 9
-Shamway Factory: 10
-JB Hifi: 4
-Woolworths: 3
-Bunnings: 3
-KFC: 3
-Tiffs Car Lot: 17
-Traders:
-NW: 1
-NE: 3
-SW: 1
-SE: 7
-OutbackDecayJune5 score out of 11: 10 - Fail
+Dishong Tower: 4 of 3 found - Pass
+Cracka Books Tower: 4 of 3 found - Pass
+Higashi Building: 2 of 2 found - Pass
+Building Site: 5 of 2 found - Pass
+Shotgun Messiah Factory: 4 of 4 found - Pass
+Shamway Factory: 4 of 4 found - Pass
+Waterworks: 22 of 2 found - Pass
+JB Hifi: 5 of 3 found - Pass
+Woolworths: 2 of 3 found - Fail
+Bunnings: 7 of 3 found - Pass
+KFC: 14 of 3 found - Pass
+Tiff's Cars: 7 of 3 found - Pass
+NW Traders: 1 of 2 found - Fail
+NE Traders: 5 of 2 found - Pass
+SW Traders: 3 of 2 found - Pass
+SE Traders: 1 of 2 found - Fail
+
+OutbackJune3 score out of 16: 13 - Fail
+
+
+OutbackJune4
+
+Dishong Tower: 4 of 3 found - Pass
+Cracka Books Tower: 5 of 3 found - Pass
+Higashi Building: 4 of 2 found - Pass
+Building Site: 8 of 2 found - Pass
+Shotgun Messiah Factory: 4 of 4 found - Pass
+Shamway Factory: 5 of 4 found - Pass
+Waterworks: 11 of 2 found - Pass
+JB Hifi: 8 of 3 found - Pass
+Woolworths: 3 of 3 found - Pass
+Bunnings: 5 of 3 found - Pass
+KFC: 11 of 3 found - Pass
+Tiff's Cars: 9 of 3 found - Pass
+NW Traders: 3 of 2 found - Pass
+NE Traders: 2 of 2 found - Pass
+SW Traders: 3 of 2 found - Pass
+SE Traders: 5 of 2 found - Pass
+
+OutbackJune4 score out of 16: 16 - Pass
+
+
+List of passes:
+OutbackJune4
 ```
+### Excel
+[Imgur](https://i.imgur.com/3I24NFl.png)
