@@ -101,4 +101,4 @@ List of passes:
 OutbackJune4
 ```
 ### Excel
-[Imgur](https://i.imgur.com/3I24NFl.png)
+[![Thumbnail](https://i.imgur.com/3I24NFll.png)](https://i.imgur.com/3I24NFl.png)
