@@ -16,7 +16,7 @@ mappass = workbook.add_format({'bold': True, 'font_color': 'green'})
 
 # define class keypoi to store requirements
 
-class keypoi:
+class keypoi(object):
     def __init__(self, filename, friendlyname, required, detected):
         self.filename = filename
         self.friendlyname = friendlyname
@@ -100,7 +100,7 @@ for file in file_list:
     for req in reqlist:
         req.detected = 0
 
-    #read in xml
+    # read in xml
     prefabs = ET.parse(file)
     root = prefabs.getroot()
 
@@ -113,14 +113,14 @@ for file in file_list:
             zpos = int(re.search("(-?\d{1,4}$)", position).group())
             if zpos >= 0:
                 if xpos < 0:
-                    keypoi.found(reqlist[-4]) # Found in NW quadrant
+                    keypoi.found(reqlist[-4]) # found in NW quadrant
                 else:
-                    keypoi.found(reqlist[-3]) # Found in NE quadrant
+                    keypoi.found(reqlist[-3]) # found in NE quadrant
             else:
                 if xpos < 0:
-                    keypoi.found(reqlist[-2]) # Found in SW quadrant
+                    keypoi.found(reqlist[-2]) # found in SW quadrant
                 else:
-                    keypoi.found(reqlist[-1]) # Found in SE quadrant
+                    keypoi.found(reqlist[-1]) # found in SE quadrant
         else:
             for req in reqlist[:-4]:
                 if re.match(req.filename, name):
