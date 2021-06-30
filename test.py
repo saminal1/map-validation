@@ -9,7 +9,8 @@ import xlsxwriter
 
 workbook = xlsxwriter.Workbook('mapvalreport.xlsx')
 worksheet = workbook.add_worksheet()
-bold = workbook.add_format({'bold': True})
+tableheading = workbook.add_format({'bold': True, 'rotation': 45})
+tablegrade = workbook.add_format({'align': 'center'})
 poifail = workbook.add_format({'font_color': 'red'})
 mapfail = workbook.add_format({'bold': True, 'font_color': 'red'})
 mappass = workbook.add_format({'bold': True, 'font_color': 'green'})
@@ -48,21 +49,20 @@ reqlist.append(keypoi("traderse", "SE Traders", 2, 0))
 
 row = 0
 column = 0
-worksheet.write(row, column, 'World', bold)
+worksheet.set_row(row, None, tableheading)
+worksheet.write(row, column, 'World')
 column += 1
 
 for req in reqlist:
-    worksheet.write(row, column, req.friendlyname, bold)
-    
-    if len(req.friendlyname) < 6:
-        colwidth = 6
-    else:
-        colwidth = len(req.friendlyname) + 1
-
-    worksheet.set_column(column, column, colwidth)
+    worksheet.write(row, column, req.friendlyname)
+    worksheet.set_column(column, column, 6)
     column += 1
 
-worksheet.write(row, column, 'Result', bold)
+worksheet.write(row, column, 'Score')
+worksheet.set_column(column, column, 6)
+column += 1
+worksheet.write(row,column, 'Grade')
+worksheet.set_column(column, column, 6, tablegrade)
 
 # read in prefabs.xml files - recurse through world directories in a root path
 glob_path = Path(r"J:\Games\7D2D\candidates")
@@ -147,19 +147,22 @@ for file in file_list:
 
     print("")
     column += 1
-    # calculate pass and add to the list if appropriate
-    if score == len(reqlist):
-        print(f"{world} score out of {len(reqlist)}: {score} - Pass")
-        passes.append(world)
 
-        worksheet.write(row, column, 'PASS', mappass)
+    # print score and calculate grade
 
+    grades = ["A", "B", "C", "D", "E", "F"]
+    if len(reqlist) - score >= 5:
+        grade = grades[5]
     else:
-        print(f"{world} score out of {len(reqlist)}: {score} - Fail")
+        grade = grades[len(reqlist) - score]
+        if grade == "A":
+            passes.append(world)
+    
+    print(f"{world} score out of {len(reqlist)}: {score} - Grade {grade}")
+    worksheet.write(row,column,score)
+    column += 1
+    worksheet.write(row,column,grade)
 
-        worksheet.write(row, column, 'FAIL', mapfail)
-
-    print("\n")
 
 # print summary
 if len(passes) == 0:
@@ -169,6 +172,7 @@ else:
     for apass in passes:
         print(apass)
 
+# set world name column width to (longest world name + 2 characters) for spacing
 maxworld += 2
 worksheet.set_column(0,0,maxworld)
 workbook.close()
