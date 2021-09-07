@@ -2,4 +2,3 @@ django
 gunicorn
 xlsxwriter
 django-heroku
-xml
