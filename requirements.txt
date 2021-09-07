@@ -2,4 +2,4 @@ django
 gunicorn
 xlsxwriter
 django-heroku
-ElementTree
+xml.etree.ElementTree
