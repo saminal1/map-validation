@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 skyscraper_01,"Dishong Tower",3
 skyscraper_02,"Cracka Books Tower",3
 skyscraper_03,"Higashi Building",2
@@ -10,3 +11,19 @@ store_grocery_02,"Woolworths",3
 store_hardware_02,"Bunnings",3
 diner_03,"KFC",3
 carlot_01,"Tiff's Cars",3
+=======
+skyscraper_01,"Dishong Tower",1
+skyscraper_02,"Cracka Books Tower",1
+skyscraper_03,"Higashi Building",1
+skyscraper_04,"Building Site",1
+factory_lg_01,"Shotgun Messiah Factory",1
+factory_lg_02,"Shamway Factory",1
+store_electronics_02,"BJ Hifi",1
+store_grocery_02,"Moles",1
+store_hardware_02,"Runnings Warhouse",1
+diner_03,"FCK",1
+house_old_gambrel_03,"Carl's Corn",1
+store_clothing_02,"J-Mart",1
+factory_03,"Pop N Pills Factory",1
+post_office_01,"Ghost Office",1
+>>>>>>> Stashed changes
