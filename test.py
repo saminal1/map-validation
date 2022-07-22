@@ -35,11 +35,7 @@ reqlist.append(keypoi("tradersw", "SW Traders", 2, 0))
 reqlist.append(keypoi("traderse", "SE Traders", 2, 0))
 
 # read in prefabs.xml files - recurse through world directories in a root path
-<<<<<<< Updated upstream
-glob_path = Path(r"J:\Games\7D2D\NitroGen_WorldGenerator\output")
-=======
 glob_path = Path(r"J:\Games\7D2D\TestWorlds")
->>>>>>> Stashed changes
 file_list = [str(pp) for pp in glob_path.glob("**/prefabs.xml")]
 
 # define blank list to keep track of which worlds work
